@@ -17,12 +17,20 @@ public class Main {
         String formattedBody = String.format(body, "Jennilyn", 4);
 
         HashMap<String, Object> context = new HashMap<>();
-        context.put("name", "Jennilyn");
+        context.put("name", "LynnieLou");
         context.put("messageCount", 3);
 
         String formattedHtml = String.format(largeBody, "Jennilyn", 6);
 
         System.out.println(formattedBody);
         System.out.println(formattedHtml);
+
+        //using Static implementation of htmlReport:
+        String htmlReport = Report.htmlReport(context);
+        System.out.println(htmlReport);
+
+        //using Instance implementation of htmlReport:
+        String htmlReport2 = new Report(context).htmlReport();
+        System.out.println(htmlReport2);
     }
 }
